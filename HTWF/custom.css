@@ -32,3 +32,36 @@
 	width: 100px !important;
 	border-radius:2%;
 } 
+
+.image-ten{
+	border-radius:2%;
+}
+
+#middle-border{
+	border-right:1px solid;
+	border-left:1px solid;
+	border-color: #585858;
+}
+.desc-text{
+	margin-top: -10px !important;
+	text-align: center !important;
+	font-size: 12px !important;
+}
+.txt-order{
+	font-size: 11px !important;
+    line-height: 11px !important;
+    letter-spacing: .2px;
+    color: #000000 !important;
+}
+.col-style{
+	padding:0px !important;
+	margin:5px 0px !important;
+}
+.col-txt-style{
+	color: #5584FF !important;
+	font-weight: bolder !important;
+}
+
+#about-snippet{
+	text-align: center;
+}

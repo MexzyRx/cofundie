@@ -46,7 +46,7 @@ const Container = styled.div`
   }
 `;
 
-const Header = props => {
+const Header = (props) => {
   return (
     <HeaderStyle>
       <Container>
@@ -54,9 +54,11 @@ const Header = props => {
           Find and co-invest in high return real estate from the comfort of your
           home.
         </h1>
-        <Button bg={COLORS.BLUE} color="white">
-          Get Started
-        </Button>
+        <a href="https://app.cofundie.com">
+          <Button bg={COLORS.BLUE} color="white">
+            Get Started
+          </Button>
+        </a>
       </Container>
     </HeaderStyle>
   );

@@ -61,7 +61,7 @@ const NavButton = styled(Button)`
   }
 `;
 
-const Navbar = props => {
+const Navbar = (props) => {
   const [width, setWidth] = React.useState(0);
 
   const updateWindowDimensions = () => {
@@ -93,11 +93,19 @@ const Navbar = props => {
               <a href="https://www.cofundie.com/faq">FAQ</a>
             </li>
             <li>
-              <a href="https://realsights.cofundie.com/" target="_black">Realsights Blog</a>
+              <a href="https://realsights.cofundie.com/" target="_black">
+                Realsights Blog
+              </a>
             </li>
-            <NavButton bg="white" borderColor={COLORS.BLUE} color={COLORS.BLUE}>
-              <a href="https://app.cofundie.com">Get Started</a>
-            </NavButton>
+            <a href="https://app.cofundie.com">
+              <NavButton
+                bg="white"
+                borderColor={COLORS.BLUE}
+                color={COLORS.BLUE}
+              >
+                Get Started
+              </NavButton>
+            </a>
             <li>
               <a href="https://app.cofundie.com">Sign in</a>
             </li>
@@ -108,9 +116,11 @@ const Navbar = props => {
           <Link to="/">
             <img style={{ width: "8rem", height: "auto" }} src={logo} alt="" />
           </Link>
-          <NavButton bg="white" borderColor={COLORS.BLUE} color={COLORS.BLUE}>
-            <a href="#/">Get Started</a>
-          </NavButton>
+          <a href="https://app.cofundie.com">
+            <NavButton bg="white" borderColor={COLORS.BLUE} color={COLORS.BLUE}>
+              Get Started
+            </NavButton>
+          </a>
           <img style={{ width: "2.5rem", height: "auto" }} src={menu} alt="" />
         </>
       )}

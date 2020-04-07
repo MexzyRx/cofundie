@@ -398,9 +398,12 @@ const LandingPage = (props) => {
                   with the potential to generate consistent cashflow and
                   long-term equity build up
                 </p>
-                <Button mt="5rem" bg={COLORS.LIME} color={COLORS.BLUE}>
-                  Get Started
-                </Button>
+
+                <a href="https://app.cofundie.com">
+                  <Button mt="5rem" bg={COLORS.LIME} color={COLORS.BLUE}>
+                    Get Started
+                  </Button>
+                </a>
               </div>
               <div>
                 <img
@@ -474,9 +477,11 @@ const LandingPage = (props) => {
             <p style={{ paddingTop: "3rem" }}>
               Signing up is easy, and our team will get you started in no time.
             </p>
-            <Button mt="5rem" bg={COLORS.LIME} color={COLORS.BLUE}>
-              Get Started
-            </Button>
+            <a href="https://app.cofundie.com">
+              <Button mt="5rem" bg={COLORS.LIME} color={COLORS.BLUE}>
+                Get Started
+              </Button>
+            </a>
           </Container>
         </Section>
       </main>

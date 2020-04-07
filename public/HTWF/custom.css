@@ -1,0 +1,128 @@
+
+.properties.flexslider .advs-box-content{
+	padding:0 !important;
+}
+
+.properties.flexslider .advs-box-content h3{
+	font-size: 18px;
+	font-weight:  700;
+	margin:0;
+}
+.properties.flexslider .advs-box-content h4{
+	font-size: 14px;
+	font-weight: 400;
+	color:rgb(135, 140, 146);
+	margin:0;
+}
+
+.properties.flexslider .advs-box-content .row{
+	margin:auto;
+	width: 100%;
+}
+
+.properties.flexslider .advs-box-content .row div{
+	text-align: center;
+}
+#testimonials .flexslider .slides img {
+    height: auto;
+    max-width: none;
+    height: 100%;
+    max-width: 100px !important;
+    margin: auto !important;
+	width: 100px !important;
+	border-radius:2%;
+} 
+
+.image-ten{
+	border-radius:2%;
+}
+
+#middle-border{
+	border-right:1px solid;
+	border-left:1px solid;
+	border-color: #585858;
+}
+.desc-text{
+	margin-top: -10px !important;
+	text-align: center !important;
+	font-size: 12px !important;
+}
+.txt-order{
+	font-size: 11px !important;
+    line-height: 11px !important;
+    letter-spacing: .2px;
+    color: #000000 !important;
+}
+.col-style{
+	padding:0px !important;
+	margin:5px 0px !important;
+}
+.col-txt-style{
+	color: #5584FF !important;
+	font-weight: bolder !important;
+}
+
+#about-snippet{
+	text-align: center;
+}
+
+element.style {
+    background-image: url(../assets/img/bg/4.jpg);
+}
+.subscribe {
+    background-color: #50a1ff !important;
+    padding: 30px 32px;
+}
+
+.subscribe .heading {
+    color: white !important;
+    font-weight: 300;
+}
+
+.subscribe .small {
+    padding: 2rem;
+}
+
+.subscribe .input-group {
+    height: 42.5px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10rem;
+}
+
+.subscribe .input-group-addon {
+    padding: 0;
+    height: 100%;
+    margin: 0;
+    border: none !important;
+    background: transparent;
+}
+
+.subscribe .input-group .form-control,
+.subscribe .input-group .btn {
+    height: 100%;
+    border-radius: 10rem;
+}
+
+.subscribe .input-group .form-control {
+    background: transparent;
+    border-width: 0;
+    color: white;
+    padding: 0 3rem;
+}
+
+.subscribe .input-group .form-control::placeholder {
+    color: white;
+}
+
+.subscribe .input-group .btn {
+    margin: 0;
+    margin-right: 0px;
+    height: 100%;
+    border-radius: 10rem;
+    border: none;
+    margin-right: -2px;
+    padding: 1rem 3rem;
+    background: rgba(248, 249, 250, 0.6);
+    color: white;
+    text-transform: uppercase;
+}

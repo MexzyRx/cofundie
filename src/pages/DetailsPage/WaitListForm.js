@@ -3,24 +3,11 @@ import { Formik } from "formik";
 import { useHistory } from "react-router-dom";
 import * as Yup from "yup";
 import styled from "styled-components";
+import axios from "axios";
 import { space } from "styled-system";
 
 import { COLORS } from "app-constants";
 import { Button } from "components/styled";
-
-const initialValues = {
-  fullName: "",
-  email: "",
-  phoneNumber: ""
-};
-
-const ValidationSchema = Yup.object().shape({
-  fullName: Yup.string().required("Please enter your full name"),
-  email: Yup.string()
-    .email()
-    .required("Please enter a valid email address"),
-  phoneNumber: Yup.number().required("Please enter a valid phone number")
-});
 
 const Form = styled.form`
   font-size: 120%;
@@ -93,9 +80,25 @@ const Success = styled.div`
   }
 `;
 
+const initialValues = {
+  full_name: "",
+  email: "",
+  phone_number: "",
+};
+
+const ValidationSchema = Yup.object().shape({
+  full_name: Yup.string().required("Please enter your full name"),
+  email: Yup.string().email().required("Please enter a valid email address"),
+  phone_number: Yup.number().required("Please enter a valid phone number"),
+});
+
 const WaitListForm = () => {
   const [status, setStatus] = React.useState("unsubmitted");
   const history = useHistory();
+
+  const url = `https://cofundieapp.herokuapp.com/public/autowebsite/new_waitlist`;
+
+  // const handleSubmit = async (data) => {};
 
   return (
     <>
@@ -103,23 +106,37 @@ const WaitListForm = () => {
         <Formik
           initialValues={initialValues}
           validationSchema={ValidationSchema}
-          onSubmit={values => {
+          onSubmit={async (values) => {
             try {
-              console.log(values);
-              setStatus("submitted");
+              let res = await axios({
+                method: "POST",
+                url,
+                data: values,
+              });
+              if (res.status > 199 && res.status < 299) {
+                setStatus("submitted");
+              }
             } catch (err) {
-              console.log("Something went wrong");
-              setStatus("unsubmitted");
+              console.error("Something went wrong");
+              // setStatus("unsubmitted");
+              setStatus("error");
             }
           }}
         >
-          {({ values, handleChange, handleSubmit, errors, touched }) => (
+          {({
+            values,
+            handleChange,
+            handleSubmit,
+            errors,
+            touched,
+            isSubmitting,
+          }) => (
             <>
               <H3 mt="4rem">Join the Waitlist</H3>
               <Form onSubmit={handleSubmit}>
                 <Label>Full name</Label>
                 <Input
-                  name="fullName"
+                  name="full_name"
                   onChange={handleChange}
                   value={values.fullName}
                   placeholder="John Sylvester"
@@ -142,7 +159,7 @@ const WaitListForm = () => {
 
                 <Label>Phone number</Label>
                 <Input
-                  name="phoneNumber"
+                  name="phone_number"
                   onChange={handleChange}
                   value={values.phoneNumber}
                   placeholder="265-564-000"
@@ -159,7 +176,7 @@ const WaitListForm = () => {
                   boxShadow="true"
                   type="submit"
                 >
-                  Join the Waitlist
+                  {isSubmitting ? "Submitting..." : "Join the Waitlist"}
                 </Button>
               </Form>
             </>
@@ -184,6 +201,12 @@ const WaitListForm = () => {
           >
             Back to Homepage
           </Button>
+        </Success>
+      )}
+      {status === "error" && (
+        <Success>
+          <H3 my="4rem">Looks like something went wrong. </H3>
+          <p>Please review your data and try again.</p>
         </Success>
       )}
     </>

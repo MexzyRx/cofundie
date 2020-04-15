@@ -247,17 +247,15 @@ const DetailsPage = ({ listings, match }) => {
                   Signing up is easy, and our team will get you started in no
                   time.
                 </p>
-                <a href="https://app.cofundie.com">
-                  <Button
-                    mt="5rem"
-                    bg={COLORS.LIME}
-                    color={COLORS.BLUE}
-                    borderColor={COLORS.BLUE}
-                    boxShadow="true"
-                  >
-                    Get Started
-                  </Button>
-                </a>
+                <Button
+                  mt="5rem"
+                  bg={COLORS.LIME}
+                  color={COLORS.BLUE}
+                  borderColor={COLORS.BLUE}
+                  boxShadow="true"
+                >
+                  Get Started
+                </Button>
               </Container>
             </Section>
           </>

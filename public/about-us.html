@@ -23,6 +23,124 @@
     <link rel="stylesheet" href="/skin.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
+<style>
+    .footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 80px;
+    }
+
+    .footer__grid {
+      display: grid;
+      width: 80%;
+
+      /* grid-template-columns: 30% 20% 20% 30%; */
+      grid-template-columns: 30% 20% 30%;
+      grid-template-rows: auto;
+      grid-template-areas:
+    /* "logo quick resources wealth"
+    "contact quick resources wealth"
+    "social quick resources wealth"; */
+        "logo quick wealth"
+        "contact quick wealth"
+        "social quick wealth";
+    }
+
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer__links a {
+      color: unset;
+      text-decoration: none;
+    }
+
+    .footer__link-head {
+      font-size: 120%;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .footer__copyright {
+      margin-top: 100px;
+      margin-bottom: 70px;
+      font-weight: 500;
+      font-size: 130%;
+      color: #14379b;
+    }
+
+    .footer__logo {
+      grid-area: logo;
+
+      width: 140px;
+    }
+
+    .footer__contacts {
+      grid-area: contact;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer__social {
+      grid-area: social;
+
+      width: 70%;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .footer__social img {
+      width: 30px;
+      height: auto;
+    }
+
+    @media (max-width: 900px) {
+      .footer__grid {
+        width: 90%;
+
+        /* font-size: 1.4rem; */
+
+        /* grid-template-columns: 30% 30% 40%; // revert to this when resources is reincluded */
+        grid-template-columns: 30% 40% 30%;
+        grid-template-areas:
+          "logo logo ."
+          "contact contact social"
+          /* "quick resources wealth"; */
+          "quick wealth resources";
+      }
+
+      .footer__grid > * {
+        padding-bottom: 20px;
+      }
+
+      .footer__links {
+        font-size: 14px;
+      }
+      .footer__link-head {
+        font-size: unset;
+      }
+      .footer__copyright {
+        margin-top: 30px;
+        font-size: 80%;
+      }
+
+      .footer__social {
+        width: 80%;
+        justify-content: space-around;
+        justify-self: center;
+      }
+
+      .footer__social img {
+        width: 15px;
+        height: auto;
+      }
+    }
+</style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150278245-1"></script>
 <script>
@@ -539,7 +657,8 @@
             <hr class="space m" />
         </div>
     </div>
-    <footer class="footer-base">
+
+    <!-- <footer class="footer-base">
         <div class="content">
             <div class="container">
                 <div class="row">
@@ -551,10 +670,10 @@
                                     <li><a href="about-us.html">About us</a></li>
                                     <li><a href="contacts.html">Contact us</a></li>
                                     <li><a href="faq.html">FAQ's</a></li>
-                                    <li><a href="https://medium.com/cofundie" target="_blank">Blog</a></li>
+                                    <li><a href="https://medium.com/cofundie" target="_blank">Blog</a></li> -->
                                     <!-- <li><a href="#"></a></li>
                                     <li><a href="#">Company</a></li> -->
-                                </ul>
+                                <!-- </ul>
                             </div>
                             <div class="col-md-6">
                                 <h3>Resources</h3>
@@ -562,10 +681,10 @@
                                     <li><a href="#">Privacy policy</a></li>
                                     <li><a href="#">Terms of services</a></li>
                                     <li><a href="#">RSS Feeds</a></li>
-                                    <li><a href="#">Legal</a></li>
+                                    <li><a href="#">Legal</a></li> -->
                                     <!-- <li><a href="#">RSS Feeds</a></li>
                                     <li><a href="#">Latest news</a></li> -->
-                                </ul>
+                                <!-- </ul>
                             </div>
                         </div>
                     </div>
@@ -612,7 +731,58 @@
                 </div>
             </div>
         </div>
-    
+
+    </footer> -->
+    <footer class="footer">
+        <div class="footer__grid">
+          <img
+            src="./assets/img/cofundie-logo.png"
+            alt="Cofundie logo"
+            class="footer__logo"
+          />
+          <div class="footer__contacts">
+            <small>19 Banana street, East Legon Accra, Ghana</small>
+            <small>info@cofundie.com +233 50 169 3352</small>
+          </div>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/cofundie">
+              <img src="./assets/img/facebook.svg" alt="" />
+            </a>
+            <a href="https://twitter.com/cofundie">
+              <img src="./assets/img/twitter.svg" alt="" />
+            </a>
+            <a href="https://www.instagram.com/cofundie/?hl=en">
+              <img src="./assets/img/instagram.svg" alt="" />
+            </a>
+            <a href="https://www.linkedin.com/cofundie/">
+              <img src="./assets/img/linkedin.svg" alt="" />
+            </a>
+          </div>
+          <div class="footer__links" style="grid-area: quick;">
+            <p class="footer__link-head">Quick Links</p>
+            <a href="https://www.cofundie.com/about-us">About Us</a>
+            <a href="https://www.cofundie.com/contacts.html">Contact Us</a>
+            <a href="https://www.cofundie.com/faq.html">FAQs</a>
+            <a href="https://realsights.cofundie.com/">Blog</a>
+          </div>
+          <div
+            class="footer__links"
+            style="grid-area: wealth; text-align: center;"
+          >
+            <p class="footer__link-head">Your wealth building partners</p>
+            <span>Your wealth building partners</span>
+            <span>Invest in real estate simply with us</span>
+  
+            <span style="font-weight: 700; color: #14379b; margin-top: 20px;">
+              We are trustworthy
+            </span>
+            <span>Growing your money is our business</span>
+          </div>
+        </div>
+        <p class="footer__copyright">
+          Cofundie Company Limited, 2020. All rights reserved.
+        </p>
+            
         <link rel="stylesheet" href="/HTWF/scripts/font-awesome/css/font-awesome.css">
         <script async src="/HTWF/scripts/bootstrap/js/bootstrap.min.js"></script>
         <script src="/HTWF/scripts/imagesloaded.min.js"></script>
@@ -622,7 +792,7 @@
         <script src="/HTWF/scripts/flexslider/jquery.flexslider-min.js"></script>
         <script src="/HTWF/scripts/jquery.magnific-popup.min.js"></script>
         <script src='/HTWF/scripts/jquery.progress-counter.js'></script>
-    </footer>
+      </footer>
 </body>
 
 

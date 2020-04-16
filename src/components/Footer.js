@@ -7,6 +7,7 @@ import logo from "assets/images/cofundie-logo.png";
 import facebook from "assets/images/facebook.svg";
 import instagram from "assets/images/instagram.svg";
 import twitter from "assets/images/twitter.svg";
+import linkedin from "assets/images/linkedin.svg";
 
 const FooterStyle = styled.footer`
   display: flex;
@@ -107,13 +108,18 @@ const Social = styled.div`
   flex-direction: row;
   justify-content: space-between;
 
+  img {
+    width: 3rem;
+    height: auto;
+  }
+
   @media (max-width: 768px) {
     width: 80%;
     justify-content: space-around;
     justify-self: center;
 
     img {
-      width: 15%;
+      width: 1.5rem;
       height: auto;
     }
   }
@@ -139,6 +145,9 @@ const Footer = () => {
           </a>
           <a href="https://www.instagram.com/cofundie/?hl=en">
             <img src={instagram} alt="" />
+          </a>
+          <a href="https://www.linkedin.com/cofundie/">
+            <img src={linkedin} alt="" />
           </a>
         </Social>
         <Links style={{ gridArea: "quick" }}>

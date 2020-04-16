@@ -15,12 +15,13 @@ const NavbarStyle = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 2.5rem 10rem;
+  padding: 1.5rem 10rem;
+  font-weight: bold;
 
-  font-size: 2.2rem;
+  font-size: 1.4rem;
 
   img {
-    height: 5rem;
+    height: 4rem;
   }
 
   a {
@@ -36,7 +37,7 @@ const NavbarStyle = styled.nav`
 
     > * {
       /* &:not(:last-child) { */
-      margin-right: 5rem;
+      margin-right: 3.5rem;
       /* } */
     }
   }
@@ -53,10 +54,11 @@ const NavbarStyle = styled.nav`
 `;
 
 const NavButton = styled(Button)`
-  padding: 1rem 4rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 1.5rem 4.5rem;
 
   @media (max-width: 768px) {
-    font-size: 1.2rem;
     padding: 0.8rem 2rem;
   }
 `;

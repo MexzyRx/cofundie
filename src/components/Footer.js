@@ -18,12 +18,16 @@ const FooterStyle = styled.footer`
 const FooterGrid = styled.div`
   display: grid;
   width: 80%;
-  grid-template-columns: 30% 20% 20% 30%;
+  /* grid-template-columns: 30% 20% 20% 30%; */
+  grid-template-columns: 30% 20% 30%;
   grid-template-rows: auto;
   grid-template-areas:
-    "logo quick resources wealth"
+    /* "logo quick resources wealth"
     "contact quick resources wealth"
-    "social quick resources wealth";
+    "social quick resources wealth"; */
+    "logo quick wealth"
+    "contact quick wealth"
+    "social quick wealth";
 
   @media (max-width: 900px) {
     width: 90%;
@@ -34,11 +38,13 @@ const FooterGrid = styled.div`
 
     /* font-size: 1.4rem; */
 
-    grid-template-columns: 30% 30% 40%;
+    /* grid-template-columns: 30% 30% 40%; // revert to this when resources is reincluded */
+    grid-template-columns: 30% 40% 30%;
     grid-template-areas:
       "logo logo ."
       "contact contact social"
-      "quick resources wealth";
+      /* "quick resources wealth"; */
+      "quick wealth resources";
   }
 `;
 
@@ -125,24 +131,30 @@ const Footer = () => {
           <small>info@cofundie.com +233 50 169 3352</small>
         </Contacts>
         <Social>
-          <img src={facebook} alt="" />
-          <img src={twitter} alt="" />
-          <img src={instagram} alt="" />
+          <a href="https://www.facebook.com/cofundie">
+            <img src={facebook} alt="" />
+          </a>
+          <a href="https://twitter.com/cofundie">
+            <img src={twitter} alt="" />
+          </a>
+          <a href="https://www.instagram.com/cofundie/?hl=en">
+            <img src={instagram} alt="" />
+          </a>
         </Social>
         <Links style={{ gridArea: "quick" }}>
           <LinkHead>Quick Links</LinkHead>
-          <a href="#/">About Us</a>
-          <a href="#/">Contact Us</a>
-          <a href="#/">FAQs</a>
-          <a href="#/">Blog</a>
+          <a href="https://www.cofundie.com/about-us">About Us</a>
+          <a href="https://www.cofundie.com/contacts.html">Contact Us</a>
+          <a href="https://www.cofundie.com/faq.html">FAQs</a>
+          <a href="https://realsights.cofundie.com/">Blog</a>
         </Links>
-        <Links style={{ gridArea: "resources" }}>
+        {/* <Links style={{ gridArea: "resources" }}>
           <LinkHead>Resources</LinkHead>
           <a href="#/">Privacy policy</a>
           <a href="#/">Terms of services</a>
           <a href="#/">RSS Feeds</a>
           <a href="#/">Legal</a>
-        </Links>
+        </Links> */}
         <Links style={{ textAlign: "center", gridArea: "wealth" }}>
           <LinkHead>Your wealth building partners</LinkHead>
           <span>Your wealth building partners</span>
@@ -152,7 +164,7 @@ const Footer = () => {
             style={{
               fontWeight: "700",
               color: `${COLORS.BLUE}`,
-              marginTop: "2rem"
+              marginTop: "2rem",
             }}
           >
             We are trustworthy

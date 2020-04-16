@@ -320,9 +320,11 @@ const LandingPage = (props) => {
               eco-friendly. Its never been this easy to invest in real estate
             </p>
           </Container>
-          <Button mt="5rem" bg={COLORS.BLUE} color="white">
-            Learn more
-          </Button>
+          <a href="https://www.cofundie.com/about-us">
+            <Button mt="5rem" bg={COLORS.BLUE} color="white">
+              Learn more
+            </Button>
+          </a>
         </Section>
         <Section bg={COLORS.BACKGROUND_LIGHT_BLUE}>
           <Tabs

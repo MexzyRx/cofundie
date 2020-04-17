@@ -83,13 +83,13 @@ const Success = styled.div`
 const initialValues = {
   full_name: "",
   email: "",
-  phone_number: "",
+  phone: "",
 };
 
 const ValidationSchema = Yup.object().shape({
   full_name: Yup.string().required("Please enter your full name"),
   email: Yup.string().email().required("Please enter a valid email address"),
-  phone_number: Yup.number().required("Please enter a valid phone number"),
+  phone: Yup.number().required("Please enter a valid phone number"),
 });
 
 const WaitListForm = () => {
@@ -159,7 +159,7 @@ const WaitListForm = () => {
 
                 <Label>Phone number</Label>
                 <Input
-                  name="phone_number"
+                  name="phone"
                   onChange={handleChange}
                   value={values.phoneNumber}
                   placeholder="265-564-000"

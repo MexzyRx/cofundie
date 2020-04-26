@@ -19,7 +19,13 @@ import Header from "components/Header";
 import Tabs from "components/Tabs";
 import Footer from "components/Footer";
 
-import newsLogos from "assets/images/news-logos.png";
+import fs from "assets/images/logos/fs.png";
+import ni from "assets/images/logos/ni.png";
+import nm from "assets/images/logos/nm.png";
+import tc from "assets/images/logos/tc.png";
+import tp from "assets/images/logos/tp.png";
+import wz from "assets/images/logos/wz.png";
+
 import partners from "assets/images/partners.png";
 import laptop from "assets/images/macbook.png";
 import laptopM from "assets/images/macbook-mobile.png";
@@ -36,13 +42,57 @@ import kelvin from "assets/images/testimonials/kelvin.png";
 import jide from "assets/images/testimonials/jide.png";
 import amara from "assets/images/testimonials/amara.png";
 
-const NewsLogos = styled.img`
+const logos = [
+  {
+    id: "fs",
+    img: fs,
+    link:
+      "https://www.finscreener.com/blog/interview-with-a-real-estate-investment-platform-cofundie-223b",
+  },
+  { id: "ni", img: ni, link: "" },
+  {
+    id: "nm",
+    img: nm,
+    link:
+      "https://nairametrics.com/2019/08/22/11-african-startups-win-1-1-million-mest-grant/",
+  },
+  {
+    id: "tc",
+    img: tc,
+    link:
+      "https://techcrunch.com/2019/08/21/african-incubator-mest-has-a-new-md-and-11-fresh-startup-investments/",
+  },
+  {
+    id: "tp",
+    img: tp,
+    link:
+      "https://techpoint.africa/2019/08/22/mest-invests-11m-in-2019-cohort/",
+  },
+  { id: "wz", img: wz, link: "https://www.youtube.com/watch?v=u36wUlTM0WE" },
+];
+
+const NewsLogos = styled.div`
   width: 70%;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   @media (max-width: 768px) {
-    width: 95%;
+    width: 90%;
+  }
+`;
+const NewsLogo = styled.a`
+  img {
+    height: 100%;
+    width: 12rem;
+  }
+
+  @media (max-width: 768px) {
+    img {
+      height: 100%;
+      width: 5rem;
+    }
   }
 `;
 
@@ -216,7 +266,7 @@ const testimonialData = [
   {
     id: 3,
     image: jide,
-    name: " Babajide Aloba",
+    name: "Babajide Aloba",
     title: "Real Estate Professional",
     quote: `“Investing in Real Estate, though desirable to many, has remained elusive mainly due to the high 
     cost of investment. However, with “Cofundie” more people can afford to participate in Real Estate investment 
@@ -308,7 +358,14 @@ const LandingPage = (props) => {
       <main>
         <Section pt="6rem" pb="2rem">
           <h3>As Seen In The News</h3>
-          <NewsLogos src={newsLogos} alt="" />
+          <NewsLogos>
+            {logos &&
+              logos.map((logo) => (
+                <NewsLogo key={logo.id} href={logo.link}>
+                  <img src={logo.img} alt="" />
+                </NewsLogo>
+              ))}
+          </NewsLogos>
         </Section>
         <Section bg={COLORS.BACKGROUND_LIGHT_BLUE} py="10rem">
           <h3 style={{ marginBottom: "2rem" }}>What We Do</h3>

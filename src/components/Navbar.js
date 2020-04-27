@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "components/styled";
 
+import Sidenav from "components/Sidenav";
+
 import { COLORS } from "app-constants";
 
 import logo from "assets/images/cofundie-logo.png";
@@ -29,19 +31,6 @@ const NavbarStyle = styled.nav`
     text-decoration: none;
   }
 
-  ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    align-items: center;
-
-    > * {
-      /* &:not(:last-child) { */
-      margin-right: 3.5rem;
-      /* } */
-    }
-  }
-
   @media (max-width: 768px) {
     padding: 1rem;
     > * {
@@ -50,6 +39,19 @@ const NavbarStyle = styled.nav`
 
     img {
     }
+  }
+`;
+
+const NavbarItems = styled.ul`
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  align-items: center;
+
+  > * {
+    /* &:not(:last-child) { */
+    margin-right: 3.5rem;
+    /* } */
   }
 `;
 
@@ -65,6 +67,7 @@ const NavButton = styled(Button)`
 
 const Navbar = (props) => {
   const [width, setWidth] = React.useState(0);
+  const [showSidenav, setShowsidenav] = React.useState(false);
 
   const updateWindowDimensions = () => {
     setWidth(window.innerWidth);
@@ -87,7 +90,7 @@ const Navbar = (props) => {
           <Link to="/">
             <img src={logo} alt="" />
           </Link>
-          <ul>
+          <NavbarItems>
             <li>
               <a href="https://www.cofundie.com/about-us">About</a>
             </li>
@@ -95,7 +98,11 @@ const Navbar = (props) => {
               <a href="https://www.cofundie.com/faq">FAQ</a>
             </li>
             <li>
-              <a href="https://realsights.cofundie.com/" target="_black">
+              <a
+                href="https://realsights.cofundie.com/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 Realsights Blog
               </a>
             </li>
@@ -111,7 +118,7 @@ const Navbar = (props) => {
             <li>
               <a href="https://app.cofundie.com">Sign in</a>
             </li>
-          </ul>
+          </NavbarItems>
         </>
       ) : (
         <>
@@ -123,7 +130,13 @@ const Navbar = (props) => {
               Get Started
             </NavButton>
           </a>
-          <img style={{ width: "2.5rem", height: "auto" }} src={menu} alt="" />
+          <img
+            onClick={() => setShowsidenav(!showSidenav)}
+            style={{ width: "2.5rem", height: "auto", cursor: "pointer" }}
+            src={menu}
+            alt=""
+          />
+          {showSidenav && <Sidenav />}
         </>
       )}
     </NavbarStyle>

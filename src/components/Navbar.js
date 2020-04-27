@@ -136,7 +136,7 @@ const Navbar = (props) => {
             src={menu}
             alt=""
           />
-          {showSidenav && <Sidenav />}
+          <Sidenav style={{ visibility: showSidenav ? "visible" : "hidden" }} />
         </>
       )}
     </NavbarStyle>

@@ -28,9 +28,9 @@ const SidenavItem = styled.li`
   padding: 1.5rem;
 `;
 
-const Sidenav = () => {
+const Sidenav = (props) => {
   return (
-    <Style>
+    <Style {...props}>
       <SidenavItems>
         <SidenavItem>
           <a href="https://www.cofundie.com/about-us">About</a>

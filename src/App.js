@@ -26,6 +26,7 @@ import mewsTwo4 from "assets/images/mews-2/4.jpg";
 
 import LandingPage from "pages/LandingPage";
 import DetailsPage from "pages/DetailsPage";
+import CovidResponse from "pages/CovidResponse";
 
 const listingsData = [
   {
@@ -162,6 +163,7 @@ function App() {
         <ScrollToTop />
         <Switch>
           <Route path="/details/:id" component={DetailsPage}></Route>
+          <Route path="/covid-19" component={CovidResponse}></Route>
           <Route path="/">
             <LandingPage />
           </Route>

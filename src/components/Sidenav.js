@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Style = styled.nav`
@@ -47,6 +48,10 @@ const Sidenav = (props) => {
             Realsights Blog
           </a>
         </SidenavItem>
+        <SidenavItem>
+          <Link to="/covid-19">Covid-19 Response</Link>
+        </SidenavItem>
+
         <SidenavItem>
           <a href="https://app.cofundie.com">Sign in</a>
         </SidenavItem>

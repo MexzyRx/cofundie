@@ -106,6 +106,7 @@ const Navbar = (props) => {
                 Realsights Blog
               </a>
             </li>
+            <Link to="/covid-19">Covid-19 Response</Link>
             <a href="https://app.cofundie.com">
               <NavButton
                 bg="white"

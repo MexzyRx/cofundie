@@ -9,9 +9,9 @@ import { COLORS } from "app-constants";
 import { Button } from "components/styled";
 import { PageStyle, Section, Container } from "components/layout";
 
-import Available from "components/Listings/Available";
-import Closed from "components/Listings/Closed";
 import ComingSoon from "components/Listings/ComingSoon";
+import Closed from "components/Listings/Closed";
+import Available from "components/Listings/Available";
 import SoldOut from "components/Listings/SoldOut";
 
 import Navbar from "components/Navbar";
@@ -26,6 +26,7 @@ import tc from "assets/images/logos/tc.png";
 import tp from "assets/images/logos/tp.png";
 import wz from "assets/images/logos/wz.png";
 
+import stanlib from "assets/images/stanlib-large.png";
 import partners from "assets/images/partners.png";
 import laptop from "assets/images/macbook.png";
 import laptopM from "assets/images/macbook-mobile.png";
@@ -93,6 +94,16 @@ const NewsLogo = styled.a`
       height: 100%;
       width: 5rem;
     }
+  }
+`;
+
+const Partners = styled.img`
+  width: ${(props) => (props.width ? props.width : "70%")};
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    width: 95%;
   }
 `;
 
@@ -389,14 +400,14 @@ const LandingPage = (props) => {
             onChange={setPreviousTab}
             items={[
               {
-                label: "Coming Soon",
+                label: "Available",
                 key: 1,
-                component: <ComingSoon />,
+                component: <Available />,
               },
               {
-                label: "Available",
+                label: "Coming Soon",
                 key: 2,
-                component: <Available />,
+                component: <ComingSoon />,
               },
               {
                 label: "Closed",
@@ -475,6 +486,22 @@ const LandingPage = (props) => {
             </GridSection>
           </Container>
         </Section>
+        <Section bg={COLORS.BACKGROUND_LIGHT_BLUE} py="6rem">
+          <Container width="90%">
+            <h3>Meet Our Funds Custodian</h3>
+            <p style={{ paddingTop: "3rem", color: COLORS.BLUE }}>
+              Stanlib acts as fund managers for all funds invested throught the
+              platform. All funds are managed and allocated by Stanlib on behalf
+              of Co-funders.
+            </p>
+            {/* <NewsLogos src={partners} alt="" /> */}
+            <Partners
+              style={{ paddingTop: "3rem" }}
+              width="50%"
+              src={stanlib}
+            />
+          </Container>
+        </Section>
         <Section py="10rem">
           <Container width="80%" color={COLORS.BLUE}>
             <h2 style={{ marginBottom: "2.5rem" }}>Why invest with us?</h2>
@@ -524,7 +551,7 @@ const LandingPage = (props) => {
         <Section bg={COLORS.BACKGROUND_LIME} py="6rem">
           <Container width="90%">
             <h3>Meet Our Partners And Service Providers</h3>
-            <NewsLogos src={partners} alt="" />
+            <Partners width="90%" src={partners} alt="" />
           </Container>
         </Section>
         <Section bg={COLORS.BLUE} py="10rem" color="white">

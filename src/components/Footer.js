@@ -198,7 +198,7 @@ const Footer = () => {
       </FooterGrid>
 
       <Copyright>
-        Cofundie Company Limited, {year}. All rights reserved.
+        Cofundie Investment Technologies Limited, {year}. All rights reserved.
       </Copyright>
     </FooterStyle>
   );

@@ -134,7 +134,22 @@ const Footer = () => {
         <Logo src={logo} alt="" />
         <Contacts>
           <small>19 Banana street, East Legon Accra, Ghana</small>
-          <small>info@cofundie.com +233 50 169 3352</small>
+          <small>
+            <a
+              href="mailto:info@cofundie.com"
+              style={{ color: "unset", textDecoration: "none" }}
+            >
+              info@cofundie.com{" "}
+            </a>
+            <a
+              href="https://wa.me/233240143392"
+              rel="noopener noreferrer"
+              target="_blank"
+              style={{ color: "unset", textDecoration: "none" }}
+            >
+              +233 24 014 3392
+            </a>
+          </small>
         </Contacts>
         <Social>
           <a href="https://www.facebook.com/cofundie">

@@ -26,7 +26,7 @@ import tc from "assets/images/logos/tc.png";
 import tp from "assets/images/logos/tp.png";
 import wz from "assets/images/logos/wz.png";
 
-import stanlib from "assets/images/stanlib-large.png";
+// import stanlib from "assets/images/stanlib-large.png";
 import partners from "assets/images/partners.png";
 import laptop from "assets/images/macbook.png";
 import laptopM from "assets/images/macbook-mobile.png";
@@ -486,7 +486,7 @@ const LandingPage = (props) => {
             </GridSection>
           </Container>
         </Section>
-        <Section bg={COLORS.BACKGROUND_LIGHT_BLUE} py="6rem">
+        {/* <Section bg={COLORS.BACKGROUND_LIGHT_BLUE} py="6rem">
           <Container width="90%">
             <h3>Meet Our Funds Custodian</h3>
             <p style={{ paddingTop: "3rem", color: COLORS.BLUE }}>
@@ -494,14 +494,13 @@ const LandingPage = (props) => {
               platform. All funds are managed and allocated by Stanlib on behalf
               of Co-funders.
             </p>
-            {/* <NewsLogos src={partners} alt="" /> */}
             <Partners
               style={{ paddingTop: "3rem" }}
               width="50%"
               src={stanlib}
             />
           </Container>
-        </Section>
+        </Section> */}
         <Section py="10rem">
           <Container width="80%" color={COLORS.BLUE}>
             <h2 style={{ marginBottom: "2.5rem" }}>Why invest with us?</h2>

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import { space } from "styled-system";
 import { isEmpty } from "lodash";
-import Modal from "react-modal";
+// import Modal from "react-modal";
 
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
@@ -13,12 +13,12 @@ import {
   Container,
   // HorizontalScroll
 } from "components/layout";
-import WaitListForm from "./WaitListForm";
+// import WaitListForm from "./WaitListForm";
 import DealBreakdown from "components/Listings/DealBreakdown";
 import { Button } from "components/styled";
 import { COLORS } from "app-constants";
 
-import cancel from "assets/images/cancel.svg";
+// import cancel from "assets/images/cancel.svg";
 import bullet from "assets/images/bullet.svg";
 
 const DetailsPageStyle = styled(PageStyle)`
@@ -130,24 +130,24 @@ const DetailsSection = styled(Section)`
   }
 `;
 
-const CloseModal = styled.img`
-  cursor: pointer;
-  position: absolute;
-  /* left: 95%; */
-  right: 5rem;
-  height: 3rem;
+// const CloseModal = styled.img`
+//   cursor: pointer;
+//   position: absolute;
+//   /* left: 95%; */
+//   right: 5rem;
+//   height: 3rem;
 
-  @media (max-width: 768px) {
-    right: 1.5rem;
-    height: 1.5rem;
-  }
-`;
+//   @media (max-width: 768px) {
+//     right: 1.5rem;
+//     height: 1.5rem;
+//   }
+// `;
 
 const DetailsPage = ({ listings, match }) => {
   const [data, setData] = React.useState("loading");
   const [status, setStatus] = React.useState("loading");
   const [selectedImage, setSelectedImage] = React.useState("");
-  const [visible, setVisible] = React.useState(false);
+  // const [visible, setVisible] = React.useState(false);
 
   let { id } = match.params;
 
@@ -174,17 +174,18 @@ const DetailsPage = ({ listings, match }) => {
                 <span style={{ color: "black" }}>{data.phase}</span>
               </ListingTitle>
               <small>Accra - Ghana</small>
-
-              <Button
-                my="5rem"
-                bg={COLORS.LIME}
-                color={COLORS.BLUE}
-                borderColor={COLORS.BLUE}
-                boxShadow="true"
-                onClick={() => setVisible(true)}
-              >
-                Join the Waitlist
-              </Button>
+              <a href="https://app.cofundie.com/">
+                <Button
+                  my="5rem"
+                  bg={COLORS.LIME}
+                  color={COLORS.BLUE}
+                  borderColor={COLORS.BLUE}
+                  boxShadow="true"
+                  // onClick={() => setVisible(true)}
+                >
+                  Invest Now
+                </Button>
+              </a>
             </Section>
 
             <SelectedImage src={selectedImage} />
@@ -226,16 +227,18 @@ const DetailsPage = ({ listings, match }) => {
                   to date models which are closer to the final results
                 </p>
               </DetailsContainer>
-              <Button
-                my="5rem"
-                bg={COLORS.LIME}
-                color={COLORS.BLUE}
-                borderColor={COLORS.BLUE}
-                boxShadow="true"
-                onClick={() => setVisible(true)}
-              >
-                Join the Waitlist
-              </Button>
+              <a href="https://app.cofundie.com/">
+                <Button
+                  my="5rem"
+                  bg={COLORS.LIME}
+                  color={COLORS.BLUE}
+                  borderColor={COLORS.BLUE}
+                  boxShadow="true"
+                  // onClick={() => setVisible(true)}
+                >
+                  Invest Now
+                </Button>
+              </a>
             </Section>
             <Section bg={COLORS.BLUE} mt="15rem" py="5rem" color="white">
               <Container width="70%">
@@ -261,7 +264,7 @@ const DetailsPage = ({ listings, match }) => {
           </>
         )}
       </main>
-      <Modal
+      {/* <Modal
         isOpen={visible}
         style={{
           overlay: {
@@ -290,7 +293,7 @@ const DetailsPage = ({ listings, match }) => {
       >
         <CloseModal src={cancel} alt="" onClick={() => setVisible(false)} />
         <WaitListForm />
-      </Modal>
+      </Modal> */}
       <Footer />
     </DetailsPageStyle>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import { space } from "styled-system";
-import { isEmpty } from "lodash";
+import { useRavePayment } from "react-ravepayment";
 import Modal from "react-modal";
 
 import Navbar from "components/Navbar";
@@ -12,8 +12,8 @@ import { Button } from "components/styled";
 import { COLORS } from "app-constants";
 
 import splash from "assets/images/covid-19/12-compressor.jpg";
-import partnersLarge from "assets/images/covid-19/partners.png";
-import partnersMobile from "assets/images/covid-19/mobile.png";
+import partnersLarge from "assets/images/covid-19/partners.jpg";
+import partnersMobile from "assets/images/covid-19/mobile.jpg";
 import cancel from "assets/images/cancel.svg";
 import bullet from "assets/images/bullet.svg";
 
@@ -105,14 +105,85 @@ const CloseModal = styled.img`
   }
 `;
 
-const DetailsPage = ({ listings, match }) => {
-  const [data, setData] = React.useState("loading");
-  const [status, setStatus] = React.useState("loaded");
-  const [selectedImage, setSelectedImage] = React.useState("");
+const H3 = styled.h3`
+  ${space}
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 120%;
+  }
+`;
+
+const Label = styled.label`
+  width: 100%;
+  text-align: left;
+  margin-top: 1rem;
+  margin-top: 1.5rem;
+  display: block;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 80%;
+  }
+`;
+
+const Input = styled.input`
+  width: 100%;
+  border: 2px solid ${COLORS.BLUE};
+  background-color: rgba(214, 254, 33, 0.1);
+  padding: 2.5rem 3.5rem;
+  border-radius: 4px;
+  font-size: 100%;
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 2rem;
+    font-size: 80%;
+  }
+`;
+
+const CovidResponse = ({ listings, match }) => {
+  // const [data, setData] = React.useState("loading");
+  // const [status, setStatus] = React.useState("loaded");
+  // const [selectedImage, setSelectedImage] = React.useState("");
+
+  // Live Public Key: FLWPUBK-e52fd5c470b420efc13b5829f24a101b-X
+
+  // Test Public Key: FLWPUBK_TEST-b749a032b924e5f7b477d9d4ce9fad6c-X
+
+  // Docs-ish
+  // https://github.com/iamraphson/react-ravepayment/blob/master/docs/parameters.mdx#production
+
+  // Webhooks
+  // https://developer.flutterwave.com/docs/events
+  const [amount, setAmount] = React.useState(0);
   const [width, setWidth] = React.useState(0);
   const [visible, setVisible] = React.useState(false);
+  const [customer_firstName, setFirstName] = React.useState("");
+  const [customer_lastName, setLastName] = React.useState("");
+  const [customer_email, setEmail] = React.useState("");
+  const [customer_phone, setPhone] = React.useState("");
 
-  let { id } = match.params;
+  const config = {
+    txref: "rave-cofundie-covid-19",
+    reference: "rave-cofundie-covid-19",
+    custom_title: "Cofundie Investment Technologies",
+    custom_description: "Real Estate Investing Made Simple",
+
+    customer_firstname: "",
+    customer_lastname: "",
+    customer_email,
+    customer_phone,
+    amount: amount,
+    PBFPubKey: "FLWPUBK_TEST-b749a032b924e5f7b477d9d4ce9fad6c-X",
+    production: false,
+    currency: "GHS",
+  };
+
+  const { initializePayment } = useRavePayment(config);
 
   const updateWindowDimensions = () => {
     setWidth(window.innerWidth);
@@ -128,15 +199,6 @@ const DetailsPage = ({ listings, match }) => {
     };
   });
 
-  React.useEffect(() => {
-    let listing = listings.find((el) => el.id === Number(id));
-    setData(listing);
-    !isEmpty(listing) ? setStatus("loaded") : setStatus("loading");
-    !isEmpty(listing)
-      ? setSelectedImage(listing.images[0])
-      : setSelectedImage("");
-  }, [id, listings]);
-
   return (
     <DetailsPageStyle>
       <Navbar />
@@ -151,6 +213,7 @@ const DetailsPage = ({ listings, match }) => {
             borderColor={COLORS.BLUE}
             boxShadow="true"
             onClick={() => setVisible(true)}
+            // onClick={() => initializePayment()}
           >
             Donate Now
           </Button>
@@ -218,28 +281,15 @@ const DetailsPage = ({ listings, match }) => {
             >
               Partners
             </h3>
-            {width <= 480 && (
-              <img
-                style={{
-                  maxWidth: "100%",
-                  height: "auto",
-                  borderRadius: "6px",
-                }}
-                src={partnersMobile}
-                alt=""
-              />
-            )}
-            {width > 480 && (
-              <img
-                style={{
-                  maxWidth: "100%",
-                  height: "auto",
-                  borderRadius: "6px",
-                }}
-                src={partnersLarge}
-                alt=""
-              />
-            )}
+            <img
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                borderRadius: "6px",
+              }}
+              src={width <= 480 ? partnersMobile : partnersLarge}
+              alt=""
+            />
           </DetailsSection>
         </DetailsContainer>
 
@@ -251,6 +301,7 @@ const DetailsPage = ({ listings, match }) => {
             borderColor={COLORS.BLUE}
             boxShadow="true"
             onClick={() => setVisible(true)}
+            // onClick={() => initializePayment()}
           >
             Donate Now
           </Button>
@@ -304,6 +355,62 @@ const DetailsPage = ({ listings, match }) => {
         }}
       >
         <CloseModal src={cancel} alt="" onClick={() => setVisible(false)} />
+
+        <H3 mt="4rem">Donate</H3>
+
+        <Label>First name</Label>
+        <Input
+          name="customer_firstname"
+          onChange={(e) => setFirstName(e.target.value)}
+          value={customer_firstName}
+          placeholder="John"
+        />
+
+        <Label>Last name</Label>
+        <Input
+          name="customer_lastname"
+          onChange={(e) => setLastName(e.target.value)}
+          value={customer_lastName}
+          placeholder="Sylvester"
+        />
+
+        <Label>Email</Label>
+        <Input
+          type="email"
+          name="email"
+          onChange={(e) => setEmail(e.target.value)}
+          value={customer_email}
+          placeholder="john.sylvester@gmail.com"
+        />
+
+        <Label>Phone number</Label>
+        <Input
+          name="phone"
+          onChange={(e) => setPhone(e.target.value)}
+          value={customer_phone}
+          placeholder="265-564-000"
+        />
+
+        <Label>Donation amount (in GHS)</Label>
+        <Input
+          name="amount"
+          onChange={(e) => setAmount(e.target.value)}
+          value={amount}
+          placeholder="265-564-000"
+        />
+
+        <Button
+          my="5rem"
+          bg={COLORS.LIME}
+          color={COLORS.BLUE}
+          borderColor={COLORS.BLUE}
+          boxShadow="true"
+          // type="submit"
+          onClick={() => initializePayment()}
+        >
+          {/* {isSubmitting ? "Submitting..." : "Join the Waitlist"} */}
+          Donate
+        </Button>
       </Modal>
       <Footer />
     </DetailsPageStyle>
@@ -312,4 +419,4 @@ const DetailsPage = ({ listings, match }) => {
 
 export default connect((state) => ({
   listings: state.listings.data,
-}))(DetailsPage);
+}))(CovidResponse);

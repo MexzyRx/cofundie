@@ -8784,6 +8784,11 @@ react-modal@^3.11.2:
     react-lifecycles-compat "^3.0.0"
     warning "^4.0.3"
 
+react-ravepayment@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-ravepayment/-/react-ravepayment-3.0.1.tgz#fe5c7afaeebb423fd461ef9fa7b0de4bc6dc3a94"
+  integrity sha512-2CTru1sgYCyQGa8phYZQkrUh2lYwDO8lJTO4C1XJBGOpgdnznCY6asZLhfzY2bSqfPEvBK69JzDNACppFl0PYA==
+
 react-redux@^7.2.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.2.0.tgz#f970f62192b3981642fec46fd0db18a074fe879d"

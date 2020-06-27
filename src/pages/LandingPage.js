@@ -27,7 +27,7 @@ import tp from "assets/images/logos/tp.png";
 import wz from "assets/images/logos/wz.png";
 
 // import stanlib from "assets/images/stanlib-large.png";
-import partners from "assets/images/partners.png";
+// import partners from "assets/images/partners.png";
 import laptop from "assets/images/macbook.png";
 import laptopM from "assets/images/macbook-mobile.png";
 import laptopT from "assets/images/macbook-tablet.png";
@@ -97,15 +97,15 @@ const NewsLogo = styled.a`
   }
 `;
 
-const Partners = styled.img`
-  width: ${(props) => (props.width ? props.width : "70%")};
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+// const Partners = styled.img`
+//   width: ${(props) => (props.width ? props.width : "70%")};
+//   margin-top: 2rem;
+//   margin-bottom: 2rem;
 
-  @media (max-width: 768px) {
-    width: 95%;
-  }
-`;
+//   @media (max-width: 768px) {
+//     width: 95%;
+//   }
+// `;
 
 const FeatureGrid = styled.div`
   display: grid;

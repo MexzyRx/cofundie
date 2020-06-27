@@ -547,12 +547,15 @@ const LandingPage = (props) => {
           </Testimonials>
         </Section>
 
+        {/* 
         <Section bg={COLORS.BACKGROUND_LIME} py="6rem">
           <Container width="90%">
             <h3>Meet Our Partners And Service Providers</h3>
             <Partners width="90%" src={partners} alt="" />
           </Container>
         </Section>
+        */}
+
         <Section bg={COLORS.BLUE} py="10rem" color="white">
           <Container width="70%">
             <h3 style={{ color: "white" }}>

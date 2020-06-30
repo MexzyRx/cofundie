@@ -16,6 +16,8 @@ import partnersLarge from "assets/images/covid-19/partners.jpg";
 import partnersMobile from "assets/images/covid-19/mobile.jpg";
 import cancel from "assets/images/cancel.svg";
 import bullet from "assets/images/bullet.svg";
+import chevron from "assets/images/svg/chevron.svg";
+// import custom_logo from "assets/images/logos/favicon.png";
 
 const DetailsPageStyle = styled(PageStyle)`
   background-color: rgba(20, 55, 155, 0.02);
@@ -145,11 +147,17 @@ const Input = styled.input`
   }
 `;
 
-const CovidResponse = ({ listings, match }) => {
-  // const [data, setData] = React.useState("loading");
-  // const [status, setStatus] = React.useState("loaded");
-  // const [selectedImage, setSelectedImage] = React.useState("");
+const Select = styled(Input)`
+  appearance: none;
 
+  background-image: url(${chevron});
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 2rem);
+  background-position-y: 50%;
+  background-size: 2rem;
+`;
+
+const CovidResponse = ({ listings, match }) => {
   // Live Public Key: FLWPUBK-e52fd5c470b420efc13b5829f24a101b-X
 
   // Test Public Key: FLWPUBK_TEST-b749a032b924e5f7b477d9d4ce9fad6c-X
@@ -159,28 +167,30 @@ const CovidResponse = ({ listings, match }) => {
 
   // Webhooks
   // https://developer.flutterwave.com/docs/events
-  const [amount, setAmount] = React.useState(0);
+  const [amount, setAmount] = React.useState(null);
   const [width, setWidth] = React.useState(0);
   const [visible, setVisible] = React.useState(false);
-  const [customer_firstName, setFirstName] = React.useState("");
-  const [customer_lastName, setLastName] = React.useState("");
+  const [customer_firstname, setFirstName] = React.useState("");
+  const [customer_lastname, setLastName] = React.useState("");
   const [customer_email, setEmail] = React.useState("");
   const [customer_phone, setPhone] = React.useState("");
+  const [currency, setCurrency] = React.useState("NGN");
 
   const config = {
     txref: "rave-cofundie-covid-19",
     reference: "rave-cofundie-covid-19",
     custom_title: "Cofundie Investment Technologies",
     custom_description: "Real Estate Investing Made Simple",
+    // custom_logo,
 
-    customer_firstname: "",
-    customer_lastname: "",
+    customer_firstname,
+    customer_lastname,
     customer_email,
     customer_phone,
-    amount: amount,
-    PBFPubKey: "FLWPUBK_TEST-b749a032b924e5f7b477d9d4ce9fad6c-X",
-    production: false,
-    currency: "GHS",
+    amount,
+    currency,
+    PBFPubKey: "FLWPUBK-e52fd5c470b420efc13b5829f24a101b-X",
+    production: true,
   };
 
   const { initializePayment } = useRavePayment(config);
@@ -355,62 +365,84 @@ const CovidResponse = ({ listings, match }) => {
         }}
       >
         <CloseModal src={cancel} alt="" onClick={() => setVisible(false)} />
-
-        <H3 mt="4rem">Donate</H3>
-
-        <Label>First name</Label>
-        <Input
-          name="customer_firstname"
-          onChange={(e) => setFirstName(e.target.value)}
-          value={customer_firstName}
-          placeholder="John"
-        />
-
-        <Label>Last name</Label>
-        <Input
-          name="customer_lastname"
-          onChange={(e) => setLastName(e.target.value)}
-          value={customer_lastName}
-          placeholder="Sylvester"
-        />
-
-        <Label>Email</Label>
-        <Input
-          type="email"
-          name="email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={customer_email}
-          placeholder="john.sylvester@gmail.com"
-        />
-
-        <Label>Phone number</Label>
-        <Input
-          name="phone"
-          onChange={(e) => setPhone(e.target.value)}
-          value={customer_phone}
-          placeholder="265-564-000"
-        />
-
-        <Label>Donation amount (in GHS)</Label>
-        <Input
-          name="amount"
-          onChange={(e) => setAmount(e.target.value)}
-          value={amount}
-          placeholder="265-564-000"
-        />
-
-        <Button
-          my="5rem"
-          bg={COLORS.LIME}
-          color={COLORS.BLUE}
-          borderColor={COLORS.BLUE}
-          boxShadow="true"
-          // type="submit"
-          onClick={() => initializePayment()}
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            initializePayment();
+          }}
         >
-          {/* {isSubmitting ? "Submitting..." : "Join the Waitlist"} */}
-          Donate
-        </Button>
+          <H3 mt="4rem">Donate</H3>
+
+          <Label>First name</Label>
+          <Input
+            name="customer_firstname"
+            required
+            onChange={(e) => setFirstName(e.target.value)}
+            value={customer_firstname}
+            placeholder="John"
+          />
+
+          <Label>Last name</Label>
+          <Input
+            name="customer_lastname"
+            required
+            onChange={(e) => setLastName(e.target.value)}
+            value={customer_lastname}
+            placeholder="Sylvester"
+          />
+
+          <Label>Email</Label>
+          <Input
+            type="email"
+            name="email"
+            required
+            onChange={(e) => setEmail(e.target.value)}
+            value={customer_email}
+            placeholder="john.sylvester@gmail.com"
+          />
+
+          <Label>Phone number</Label>
+          <Input
+            name="phone"
+            onChange={(e) => setPhone(e.target.value)}
+            value={customer_phone}
+            placeholder="265-564-000"
+          />
+
+          <Label htmlFor="currency">Select currency</Label>
+          <Select
+            as="select"
+            required
+            name="currency"
+            value={currency}
+            onChange={(e) => setCurrency(e.target.value)}
+          >
+            <option value="NGN">Naira</option>
+            <option value="USD">USD</option>
+            <option value="GHS">GHS</option>
+          </Select>
+
+          <Label>Donation amount {currency && `(in ${currency})`}</Label>
+          <Input
+            name="amount"
+            required
+            onChange={(e) => setAmount(e.target.value)}
+            value={amount}
+            placeholder="265-564-000"
+          />
+
+          <Button
+            my="5rem"
+            bg={COLORS.LIME}
+            color={COLORS.BLUE}
+            borderColor={COLORS.BLUE}
+            boxShadow="true"
+            type="submit"
+          >
+            {/* {isSubmitting ? "Submitting..." : "Join the Waitlist"} */}
+            Donate
+          </Button>
+        </form>
       </Modal>
       <Footer />
     </DetailsPageStyle>

@@ -275,8 +275,16 @@ const CovidResponse = ({ listings, match }) => {
             </p>
             <p style={{ marginBottom: "2rem" }}>
               Your donation will fund the construction, transportation and
-              stocking costs of the testing centre. We encourage you to be part
-              of this initiative.
+              stocking costs of the testing centre. 
+            </p>
+            <p style={{ marginBottom: "2rem" }}>
+              This first unit will be built in Lagos state by Schedio works emporium and
+              shipped to Osun state Nigeria. We will conduct future campaigns for other
+              states on an as-needed basis.
+            </p>
+            <p style={{ marginBottom: "2rem" }}>
+              We encourage you to be part
+              of this noble effort and initiative.
             </p>
           </DetailsSection>
         </DetailsContainer>

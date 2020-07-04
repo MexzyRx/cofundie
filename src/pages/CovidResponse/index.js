@@ -280,28 +280,28 @@ const CovidResponse = ({ listings, match }) => {
             </p>
           </DetailsSection>
         </DetailsContainer>
-        <DetailsContainer width={{ sm: "75vw", lg: "60vw" }}>
-          <DetailsSection my="5rem" textAlign="left">
-            <h3
-              style={{
-                marginBottom: "2rem",
-                textAlign: "center",
-                width: "100%",
-              }}
-            >
-              Partners
-            </h3>
-            <img
-              style={{
-                maxWidth: "100%",
-                height: "auto",
-                borderRadius: "6px",
-              }}
-              src={width <= 480 ? partnersMobile : partnersLarge}
-              alt=""
-            />
-          </DetailsSection>
-        </DetailsContainer>
+//         <DetailsContainer width={{ sm: "75vw", lg: "60vw" }}>
+//           <DetailsSection my="5rem" textAlign="left">
+//             <h3
+//               style={{
+//                 marginBottom: "2rem",
+//                 textAlign: "center",
+//                 width: "100%",
+//               }}
+//             >
+//               Partners
+//             </h3>
+//             <img
+//               style={{
+//                 maxWidth: "100%",
+//                 height: "auto",
+//                 borderRadius: "6px",
+//               }}
+//               src={width <= 480 ? partnersMobile : partnersLarge}
+//               alt=""
+//             />
+//           </DetailsSection>
+//         </DetailsContainer>
 
         <Section>
           <Button

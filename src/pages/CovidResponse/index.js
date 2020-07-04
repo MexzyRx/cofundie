@@ -12,8 +12,8 @@ import { Button } from "components/styled";
 import { COLORS } from "app-constants";
 
 import splash from "assets/images/covid-19/12-compressor.jpg";
-import partnersLarge from "assets/images/covid-19/partners.jpg";
-import partnersMobile from "assets/images/covid-19/mobile.jpg";
+import partnersLarge from "assets/images/covid-19/partners-new.jpg";
+import partnersMobile from "assets/images/covid-19/partners-new.jpg";
 import cancel from "assets/images/cancel.svg";
 import bullet from "assets/images/bullet.svg";
 import chevron from "assets/images/svg/chevron.svg";
@@ -280,28 +280,28 @@ const CovidResponse = ({ listings, match }) => {
             </p>
           </DetailsSection>
         </DetailsContainer>
-//         <DetailsContainer width={{ sm: "75vw", lg: "60vw" }}>
-//           <DetailsSection my="5rem" textAlign="left">
-//             <h3
-//               style={{
-//                 marginBottom: "2rem",
-//                 textAlign: "center",
-//                 width: "100%",
-//               }}
-//             >
-//               Partners
-//             </h3>
-//             <img
-//               style={{
-//                 maxWidth: "100%",
-//                 height: "auto",
-//                 borderRadius: "6px",
-//               }}
-//               src={width <= 480 ? partnersMobile : partnersLarge}
-//               alt=""
-//             />
-//           </DetailsSection>
-//         </DetailsContainer>
+        <DetailsContainer width={{ sm: "75vw", lg: "60vw" }}>
+          <DetailsSection my="5rem" textAlign="left">
+            <h3
+              style={{
+                marginBottom: "2rem",
+                textAlign: "center",
+                width: "100%",
+              }}
+            >
+              Partners
+            </h3>
+            <img
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                borderRadius: "6px",
+              }}
+              src={width <= 480 ? partnersMobile : partnersLarge}
+              alt=""
+            />
+          </DetailsSection>
+        </DetailsContainer>
 
         <Section>
           <Button

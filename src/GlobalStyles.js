@@ -3,6 +3,7 @@ import fonts from "assets/fonts";
 
 import {
   H1_SIZE,
+  H1_SIZE_SM,
   H2_SIZE,
   H2_SIZE_SM,
   H3_SIZE,
@@ -48,6 +49,9 @@ export default createGlobalStyle`
   }
 
   @media (max-width: 768px) {
+    h1 {
+      font-size: ${H1_SIZE_SM}rem;
+    }
     h2 {
       font-size: ${H2_SIZE_SM}rem;
     }

@@ -12,8 +12,8 @@ import { Button } from "components/styled";
 import { COLORS } from "app-constants";
 
 import splash from "assets/images/covid-19/12-compressor.jpg";
-import partnersLarge from "assets/images/covid-19/partners.jpg";
-import partnersMobile from "assets/images/covid-19/mobile.jpg";
+import partnersLarge from "assets/images/covid-19/partners-new.jpg";
+import partnersMobile from "assets/images/covid-19/partners-new.jpg";
 import cancel from "assets/images/cancel.svg";
 import bullet from "assets/images/bullet.svg";
 import chevron from "assets/images/svg/chevron.svg";
@@ -275,8 +275,16 @@ const CovidResponse = ({ listings, match }) => {
             </p>
             <p style={{ marginBottom: "2rem" }}>
               Your donation will fund the construction, transportation and
-              stocking costs of the testing centre. We encourage you to be part
-              of this initiative.
+              stocking costs of the testing centre. 
+            </p>
+            <p style={{ marginBottom: "2rem" }}>
+              This first unit will be built in Lagos state by Schedio works emporium and
+              shipped to Osun state Nigeria. We will conduct future campaigns for other
+              states on an as-needed basis.
+            </p>
+            <p style={{ marginBottom: "2rem" }}>
+              We encourage you to be part
+              of this noble effort and initiative.
             </p>
           </DetailsSection>
         </DetailsContainer>

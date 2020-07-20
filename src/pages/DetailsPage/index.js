@@ -15,6 +15,7 @@ import {
 } from "components/layout";
 // import WaitListForm from "./WaitListForm";
 import DealBreakdown from "components/Listings/DealBreakdown";
+import ROICalculator from "./ROICalculator";
 import { Button } from "components/styled";
 import { COLORS } from "app-constants";
 
@@ -217,6 +218,14 @@ const DetailsPage = ({ listings, match }) => {
                 <DealBreakdown data={data} />
               </DetailsSection>
             </DetailsContainer>
+
+            <DetailsContainer width={{ sm: "85vw", lg: "60vw" }}>
+              <DetailsSection my="5rem">
+                <h3 style={{ marginBottom: "2rem" }}>ROI Calculator</h3>
+                <ROICalculator />
+              </DetailsSection>
+            </DetailsContainer>
+
             <Section>
               <DetailsContainer width={{ sm: "70vw", lg: "50vw" }}>
                 <p>

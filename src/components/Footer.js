@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import { COLORS } from "app-constants";
 
@@ -19,16 +20,12 @@ const FooterStyle = styled.footer`
 const FooterGrid = styled.div`
   display: grid;
   width: 80%;
-  /* grid-template-columns: 30% 20% 20% 30%; */
-  grid-template-columns: 30% 20% 30%;
+  grid-template-columns: 30% 20% 20% 30%;
   grid-template-rows: auto;
   grid-template-areas:
-    /* "logo quick resources wealth"
+    "logo quick resources wealth"
     "contact quick resources wealth"
-    "social quick resources wealth"; */
-    "logo quick wealth"
-    "contact quick wealth"
-    "social quick wealth";
+    "social quick resources wealth";
 
   @media (max-width: 900px) {
     width: 90%;
@@ -39,13 +36,12 @@ const FooterGrid = styled.div`
 
     /* font-size: 1.4rem; */
 
-    /* grid-template-columns: 30% 30% 40%; // revert to this when resources is reincluded */
-    grid-template-columns: 30% 40% 30%;
+    grid-template-columns: 30% 30% 40%;
     grid-template-areas:
       "logo logo ."
       "contact contact social"
-      /* "quick resources wealth"; */
-      "quick wealth resources";
+      "quick resources wealth";
+    /* "quick wealth resources"; */
   }
 `;
 
@@ -172,13 +168,18 @@ const Footer = () => {
           <a href="https://www.cofundie.com/faq.html">FAQs</a>
           <a href="https://realsights.cofundie.com/">Blog</a>
         </Links>
-        {/* <Links style={{ gridArea: "resources" }}>
+        <Links style={{ gridArea: "resources" }}>
           <LinkHead>Resources</LinkHead>
-          <a href="#/">Privacy policy</a>
-          <a href="#/">Terms of services</a>
-          <a href="#/">RSS Feeds</a>
-          <a href="#/">Legal</a>
-        </Links> */}
+          <Link to="/privacy-policy">Privacy policy</Link>
+          <Link to="/terms-of-service" href="#/">
+            Terms of service
+          </Link>
+          <Link to="/terms-and-conditions" href="#/">
+            Terms &amp; conditions
+          </Link>
+          {/* <a href="#/">RSS Feeds</a> */}
+          {/* <a href="#/">Legal</a> */}
+        </Links>
         <Links style={{ textAlign: "center", gridArea: "wealth" }}>
           <LinkHead>Your wealth building partners</LinkHead>
           <span>Your wealth building partners</span>

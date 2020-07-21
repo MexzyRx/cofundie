@@ -362,9 +362,7 @@ const LandingPage = (props) => {
 
   return (
     <LandingPageStyle>
-      {/* <Headroom> */}
       <Navbar />
-      {/* </Headroom> */}
       <Header />
       <main>
         <Section pt="6rem" pb="2rem">

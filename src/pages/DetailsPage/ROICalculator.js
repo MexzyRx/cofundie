@@ -80,31 +80,36 @@ const Value = styled.span`
   min-height: 5.5rem;
   color: ${COLORS.BLUE};
   padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    min-height: 4.5rem;
+    min-width: 8rem;
+  }
 `;
 
-const Price = styled.input`
-  background: rgb(165 176 194);
-  border-radius: 4px;
-  border: none;
-  font-size: 1.8rem;
-  font-family: MuseoSans500;
-  /* min-width: 8rem; */
-  width: 10rem;
-  min-height: 5.5rem;
-  text-align: center;
-  color: ${COLORS.BLUE};
-  align-self: flex-end;
-  padding: 0 2rem;
-  appearance: none;
+// const Price = styled.input`
+//   background: rgb(165 176 194);
+//   border-radius: 4px;
+//   border: none;
+//   font-size: 1.8rem;
+//   font-family: MuseoSans500;
+//   /* min-width: 8rem; */
+//   width: 10rem;
+//   min-height: 5.5rem;
+//   text-align: center;
+//   color: ${COLORS.BLUE};
+//   align-self: flex-end;
+//   padding: 0 2rem;
+//   appearance: none;
 
-  /* input[type="number"] {
-    -moz-appearance: textfield;
-  } */
-`;
+//   /* input[type="number"] {
+//     -moz-appearance: textfield;
+//   } */
+// `;
 
 const ROICalculator = ({ data }) => {
   const [quantity, setQuantity] = React.useState(0);
-  const [price, setPrice] = React.useState(0);
+  const [price] = React.useState(250);
 
   return (
     <ROIContainer>
@@ -120,13 +125,15 @@ const ROICalculator = ({ data }) => {
           </div>
           <div className="roi__values">
             <label htmlFor="">Price (USD)</label>
-            <Price
-              autoFocus
-              value={price}
-              min="0"
-              type="number"
-              onChange={(e) => setPrice(e.target.value)}
-            ></Price>
+            <Value
+            // autoFocus
+            // value={price}
+            // min="0"
+            // type="number"
+            // onChange={(e) => setPrice(e.target.value)}
+            >
+              {price}
+            </Value>
           </div>
         </div>
 

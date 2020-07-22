@@ -73,31 +73,29 @@ const DealBreakdown = ({ data }) => {
   return (
     <ListingInfo>
       <div>
+        <ListingLabel color="white" bg={COLORS.BLUE}>
+          Share Price
+        </ListingLabel>
         <ListingLabel color={COLORS.BLUE} bg={COLORS.LIME}>
           Hold Period
         </ListingLabel>
         <ListingLabel color={COLORS.LIME} bg={COLORS.BLUE}>
-          Projected Returns
+          Projected Return
         </ListingLabel>
         <ListingLabel color={COLORS.BLUE} bg={COLORS.BACKGROUND_LIGHT_BLUE}>
-          Structure
+          Deal Structure
         </ListingLabel>
         <ListingLabel color={COLORS.BLUE} bg={COLORS.LIGHT_LIME}>
           Primary Material
         </ListingLabel>
-        <ListingLabel color="white" bg={COLORS.BLUE}>
-          Cost Per Share
-        </ListingLabel>
       </div>
       <Divider />
       <div>
+        <ListingFigure>{data.details.sharePrice}</ListingFigure>
         <ListingFigure>{data.details.holdPeriod}</ListingFigure>
         <ListingFigure>{data.details.projectedReturn}</ListingFigure>
-
         <ListingFigure>{data.details.structure}</ListingFigure>
-
         <ListingFigure>{data.details.primaryMaterial}</ListingFigure>
-        <ListingFigure>{data.details.sharePrice}</ListingFigure>
       </div>
     </ListingInfo>
   );

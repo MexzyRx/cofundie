@@ -206,16 +206,16 @@ const DetailsPage = ({ listings, match }) => {
                 <p dangerouslySetInnerHTML={{ __html: data.summary }}></p>
               </DetailsSection>
             </DetailsContainer>
-            <DetailsContainer width={{ sm: "75vw", lg: "60vw" }}>
-              <DetailsSection my="5rem" textAlign="left">
-                <h3 style={{ marginBottom: "2rem" }}>Location Analysis</h3>
-                <p dangerouslySetInnerHTML={{ __html: data.location }}></p>
-              </DetailsSection>
-            </DetailsContainer>
             <DetailsContainer width={{ sm: "85vw", lg: "60vw" }}>
               <DetailsSection my="5rem">
                 <h3 style={{ marginBottom: "2rem" }}>Deal Breakdown</h3>
                 <DealBreakdown data={data} />
+              </DetailsSection>
+            </DetailsContainer>
+            <DetailsContainer width={{ sm: "75vw", lg: "60vw" }}>
+              <DetailsSection my="5rem" textAlign="left">
+                <h3 style={{ marginBottom: "2rem" }}>Location Analysis</h3>
+                <p dangerouslySetInnerHTML={{ __html: data.location }}></p>
               </DetailsSection>
             </DetailsContainer>
 

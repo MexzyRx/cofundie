@@ -36,23 +36,22 @@ const listingsData = [
     id: 1,
     name: "Appolonia Mews",
     phase: "Phase 1",
-    summary: `<p>Appolonia Mews consists of 2 x 2 bedroom semi-detached houses and 2 x 2 bedroom apartment 
-      houses within Appolonia City. The homes are targeted at middle-income earners within Accra looking to 
+    summary: `<p>Appolonia Mews consists of 2 x 2 bedroom semi-detached houses and 2 x 2 bedroom apartments 
+      within Appolonia City. The homes are targeted at middle-income earners within Accra looking to 
       purchase their first homes. Interested buyers will be offered competitive payment schedules and access 
       to mortgages. Upon completion, Appolonia Mews will be the most affordable homes in Appolonia City.<br/>
       The first phase is the pilot and it consists of 20 units. <br/><br/> Meqasa.com, The premier property listing 
       platform in Ghana will provide sales support for each unit and receive a commission based on units sold.
       </p>`,
-    location: `<p>Appolonia City is a 2,325-acre (941-hectare) mixed-use and mixed-income urban development 
-      just 20km from the centre of Accra. The project includes a variety of social infrastructure underpinned 
-      by world-class construction and estate management services. Residential sales with a range of financing 
-      options are available by purchasing a plot to build your own house in Nova Ridge or an existing home at 
-      the Oxford development. <br/><br/>
-      Appolonia Business Park offers 70 acres (30 hectares) of modern commercial areas. The park is designed 
-      to accommodate a range of uses including manufacturing, processing, storage, logistics and service companies.
-      Appolonia city aspires to be a multi-functional, fully integrated & self-sustaining city in Accra, to 
-      that end, the strategy is to make it possible for people in different economic demographics to afford 
-      housing within the city. <br/><br/>
+    location: `<p>Appolonia City is a 2,325-acre (941-hectare) inclusive mixed-use new city in Greater Accra. 
+      A seamless live-play-work community, Appolonia City offers homes, offices, shopping, schools, healthcare and ample parks and open spaces. 
+      High-quality tarred roads, power, ICT, water and storm drains are already available at Appolonia City.  <br/><br/>
+
+      Appolonia City is owned and developed by Rendeavour, the largest new city builder in Africa, with projects in Ghana, Kenya, Nigeria, Zambia, 
+      and the Democratic Republic of the Congo.
+      Backed by American, Norwegian, New Zealand and British investors, Appolonia City is a partnership with the Chiefs, elders, 
+      and residents of the Appolonia community in Greater Accra. <br/><br/>
+
       Upon completion, Appolonia City will feature the following amenities:
       <br/><br/>
       <ul>
@@ -62,10 +61,27 @@ const listingsData = [
         <li>Over 300-acres of public parks and gardens</li>
       </ul>
       <br/>
-      Appolonia City is 30 minutes from Tetteh Quarshie and Accra Mall and 5 minutes from Valley View University Oyibi.
-      It’s also 15 minutes from Adenta and 40 minutes from Tema.<br/>
-      Eastern Ridge International School, an international boarding school which will offer British and 
-      Ghanaian curriculum which will host 2,000 students upon completion is also going to be located at Appolonia City.
+      Appolonia City is located within the Greater Accra Metropolitan Area of Ghana – 20km east of Accra, between the towns of Oyibi and Afienya.
+      Distances and times to Appolonia City:
+      <br/><br/>
+      <ul>
+        <li>40 minutes from Kotoka International Airport</li>
+        <li>40 minutes from Tema</li>
+        <li>30 minutes from Tetteh Quarshie Interchange</li>
+        <li>15 minutes from Adenta</li>
+        <li>5 minutes from Valley View University, Oyibi</li>
+      </ul>
+      <br/><br/>
+      <b>Why choose an investment within Appolonia City?</b>
+      <br/><br/>
+      <ul>
+        <li>Credibility and community shareholding</li>
+        <li>Ready infrastructure</li>
+        <li>Approved masterplan</li>
+        <li>Clean land titles</li>
+        <li>Long lease term (80 years)</li>
+      </ul>
+      <br/><br/>
       </p>`,
     details: {
       sharePrice: "$250",

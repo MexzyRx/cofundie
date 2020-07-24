@@ -501,10 +501,8 @@ const LandingPage = (props) => {
           <Container width="80%" color={COLORS.BLUE}>
             <h2 style={{ marginBottom: "2.5rem" }}>Why invest with us?</h2>
             <p>
-              Every single deal that makes it through to the platform has been
-              put through a rigorous due diligence process using the latest
-              cutting edge technology. All assets are also insured by our
-              reputable insurance partners
+              Every single deal that makes it through to the platform has been put through a rigorous due diligence process using the latest cutting edge technology.
+              We only partner with the best Property Developers.
             </p>
           </Container>
           <ReasonGrid mt="4rem">

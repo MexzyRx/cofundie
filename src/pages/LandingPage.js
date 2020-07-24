@@ -499,7 +499,7 @@ const LandingPage = (props) => {
         </Section> */}
         <Section py="10rem">
           <Container width="80%" color={COLORS.BLUE}>
-            <h2 style={{ marginBottom: "2.5rem" }}>Why invest with us?</h2>
+            <h2 style={{ marginBottom: "2.5rem" }}>Why Choose Cofundie?</h2>
             <p>
               Every single deal that makes it through to the platform has been put through a rigorous due diligence process using the latest cutting edge technology.
               We only partner with the best Property Developers.

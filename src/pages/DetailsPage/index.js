@@ -184,7 +184,7 @@ const DetailsPage = ({ listings, match }) => {
                   boxShadow="true"
                   // onClick={() => setVisible(true)}
                 >
-                  Invest Now
+                  Sponsor Now
                 </Button>
               </a>
             </Section>
@@ -245,7 +245,7 @@ const DetailsPage = ({ listings, match }) => {
                   boxShadow="true"
                   // onClick={() => setVisible(true)}
                 >
-                  Invest Now
+                  Sponsor Now
                 </Button>
               </a>
             </Section>

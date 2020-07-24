@@ -380,10 +380,8 @@ const LandingPage = (props) => {
           <h3 style={{ marginBottom: "2rem" }}>What We Do</h3>
           <Container width="77%">
             <p>
-              In 3-clicks you can become a landlord and enjoy returns from sale
-              or rent. Co-invest in real estate developments that use
-              alternative building materials that have faster build time and are
-              eco-friendly. Its never been this easy to invest in real estate
+              In 3-clicks you can sponsor the construction of homes and enjoy returns from sale or rent. 
+              Sponsor real estate projects that use alternative building materials and techniques that have faster build time and are eco-friendly.
             </p>
           </Container>
           <a href="https://www.cofundie.com/about-us">

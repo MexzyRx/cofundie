@@ -406,14 +406,14 @@ const LandingPage = (props) => {
                 component: <ComingSoon />,
               },
               {
-                label: "Closed",
-                key: 3,
-                component: <Closed />,
-              },
-              {
                 label: "Sold Out",
                 key: 4,
                 component: <SoldOut />,
+              },
+              {
+                label: "Closed",
+                key: 3,
+                component: <Closed />,
               },
             ]}
           />
@@ -424,27 +424,27 @@ const LandingPage = (props) => {
             <Feature>
               <img data-src={create} className="lazyload" alt="" />
               <p>
-                Create your Cofundie account and complete your profile using
-                valid email &amp; phone numbers
+               Create your Cofundie account and complete your profile using valid email, phone, and identification numbers
               </p>
             </Feature>
             <Feature>
               <img data-src={choose} className="lazyload" alt="" />
               <p>
-                Choose a property to Co-fund, you can get multiple slots in one
-                property as well as multiple properties
+                Choose a property to sponsor. You can get multiple slots in one property, as well as multiple properties.=
               </p>
             </Feature>
             <Feature>
               <img data-src={pay} className="lazyload" alt="" />
               <p>
                 Choose one of the payment methods &amp; complete payment to
-                co-own the property(s)
+                sponsor a property, or multiple properties
               </p>
             </Feature>
             <Feature>
               <img data-src={earn} className="lazyload" alt="" />
-              <p>Start earning annually on the income from your property</p>
+              <p>
+                Start earning on the income generated from your property after the Hold Period
+              </p>
             </Feature>
           </FeatureGrid>
         </Section>

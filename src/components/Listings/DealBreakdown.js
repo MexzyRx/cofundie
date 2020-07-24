@@ -74,7 +74,7 @@ const DealBreakdown = ({ data }) => {
     <ListingInfo>
       <div>
         <ListingLabel color="white" bg={COLORS.BLUE}>
-          Share Price
+          Price per Slot
         </ListingLabel>
         <ListingLabel color={COLORS.BLUE} bg={COLORS.LIME}>
           Hold Period

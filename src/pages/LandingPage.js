@@ -113,7 +113,7 @@ const partners = [
 ];
 
 const NewsLogos = styled.div`
-  width: 70%;
+  width: 80%;
   margin: 2rem auto;
   display: flex;
   justify-content: space-between;
@@ -434,8 +434,10 @@ const LandingPage = (props) => {
           <h3 style={{ marginBottom: "2rem" }}>What We Do</h3>
           <Container width="77%">
             <p>
-              In 3-clicks you can sponsor the construction of homes and enjoy returns from sale or rent. 
-              Sponsor real estate projects that use alternative building materials and techniques that have faster build time and are eco-friendly.
+              In 3-clicks you can sponsor the construction of homes and enjoy
+              returns from sale or rent. Sponsor real estate projects that use
+              alternative building materials and techniques that have faster
+              build time and are eco-friendly.
             </p>
           </Container>
           <a href="https://www.cofundie.com/about-us">
@@ -478,13 +480,15 @@ const LandingPage = (props) => {
             <Feature>
               <img data-src={create} className="lazyload" alt="" />
               <p>
-               Create your Cofundie account and complete your profile using valid email, phone, and identification numbers
+                Create your Cofundie account and complete your profile using
+                valid email, phone, and identification numbers
               </p>
             </Feature>
             <Feature>
               <img data-src={choose} className="lazyload" alt="" />
               <p>
-                Choose a property to sponsor. You can get multiple slots in one property, as well as multiple properties.=
+                Choose a property to sponsor. You can get multiple slots in one
+                property, as well as multiple properties.=
               </p>
             </Feature>
             <Feature>
@@ -497,7 +501,8 @@ const LandingPage = (props) => {
             <Feature>
               <img data-src={earn} className="lazyload" alt="" />
               <p>
-                Start earning on the income generated from your property after the Hold Period
+                Start earning on the income generated from your property after
+                the Hold Period
               </p>
             </Feature>
           </FeatureGrid>
@@ -555,8 +560,10 @@ const LandingPage = (props) => {
           <Container width="80%" color={COLORS.BLUE}>
             <h2 style={{ marginBottom: "2.5rem" }}>Why Choose Cofundie?</h2>
             <p>
-              Every single deal that makes it through to the platform has been put through a rigorous due diligence process using the latest cutting edge technology.
-              We only partner with the best Property Developers.
+              Every single deal that makes it through to the platform has been
+              put through a rigorous due diligence process using the latest
+              cutting edge technology. We only partner with the best Property
+              Developers.
             </p>
           </Container>
           <ReasonGrid mt="4rem">
@@ -595,15 +602,7 @@ const LandingPage = (props) => {
           </Testimonials>
         </Section>
 
-        {/* 
-        <Section bg={COLORS.BACKGROUND_LIME} py="6rem">
-          <Container width="90%">
-            <h3>Meet Our Partners And Service Providers</h3>
-            <Partners width="90%" src={partners} alt="" />
-          </Container>
-        </Section>
-        */}
-        <Section pt="6rem" pb="2rem">
+        <Section bg={COLORS.BACKGROUND_LIME} py="10rem">
           <h3>Meet Our Partners And Service Providers</h3>
           <NewsLogos>
             {partners &&

@@ -26,6 +26,13 @@ import tc from "assets/images/logos/tc.png";
 import tp from "assets/images/logos/tp.png";
 import wz from "assets/images/logos/wz.png";
 
+import ap from "assets/images/partners/appolonia.png";
+import fl from "assets/images/partners/flutterwave.png";
+import mq from "assets/images/partners/meqasa.png";
+import ms from "assets/images/partners/mest.png";
+import st from "assets/images/partners/stanbic.png";
+import ze from "assets/images/partners/zenith.png";
+
 // import stanlib from "assets/images/stanlib-large.png";
 // import partners from "assets/images/partners.png";
 import laptop from "assets/images/macbook.png";
@@ -72,6 +79,39 @@ const logos = [
   { id: "wz", img: wz, link: "https://www.youtube.com/watch?v=u36wUlTM0WE" },
 ];
 
+const partners = [
+  {
+    id: "st",
+    img: st,
+    link: "https://www.stanbicbank.com.gh/",
+  },
+  {
+    id: "ms",
+    img: ms,
+    link: "https://www.meltwater.org",
+  },
+  {
+    id: "mq",
+    img: mq,
+    link: "https://www.meqasa.com",
+  },
+  {
+    id: "fl",
+    img: fl,
+    link: "https://flutterwave.com",
+  },
+  {
+    id: "ze",
+    img: ze,
+    link: "https://www.zenithbank.com.gh",
+  },
+  {
+    id: "ap",
+    img: ap,
+    link: "https://www.appolonia.com.gh",
+  },
+];
+
 const NewsLogos = styled.div`
   width: 70%;
   margin: 2rem auto;
@@ -87,6 +127,20 @@ const NewsLogo = styled.a`
   img {
     height: 100%;
     width: 12rem;
+  }
+
+  @media (max-width: 768px) {
+    img {
+      height: 100%;
+      width: 5rem;
+    }
+  }
+`;
+
+const PartnerLogo = styled.a`
+  img {
+    height: 5rem;
+    width: auto;
   }
 
   @media (max-width: 768px) {
@@ -553,6 +607,17 @@ const LandingPage = (props) => {
           </Container>
         </Section>
         */}
+        <Section pt="6rem" pb="2rem">
+          <h3>Meet Our Partners And Service Providers</h3>
+          <NewsLogos>
+            {partners &&
+              partners.map((logo) => (
+                <PartnerLogo key={logo.id} href={logo.link}>
+                  <img src={logo.img} alt="" />
+                </PartnerLogo>
+              ))}
+          </NewsLogos>
+        </Section>
 
         <Section bg={COLORS.BLUE} py="10rem" color="white">
           <Container width="70%">

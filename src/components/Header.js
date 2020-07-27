@@ -51,8 +51,7 @@ const Header = (props) => {
     <HeaderStyle>
       <Container>
         <h1>
-          Find and co-invest in high return real estate from the comfort of your
-          home.
+          Sponsor the Construction of affordable housing, and earn a profit from Rent or Sales.
         </h1>
         <a href="https://app.cofundie.com">
           <Button bg={COLORS.BLUE} color="white">

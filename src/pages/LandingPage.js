@@ -434,10 +434,8 @@ const LandingPage = (props) => {
           <h3 style={{ marginBottom: "2rem" }}>What We Do</h3>
           <Container width="77%">
             <p>
-              In 3-clicks you can become a landlord and enjoy returns from sale
-              or rent. Co-invest in real estate developments that use
-              alternative building materials that have faster build time and are
-              eco-friendly. Its never been this easy to invest in real estate
+              In 3-clicks you can sponsor the construction of homes and enjoy returns from sale or rent. 
+              Sponsor real estate projects that use alternative building materials and techniques that have faster build time and are eco-friendly.
             </p>
           </Container>
           <a href="https://www.cofundie.com/about-us">
@@ -462,14 +460,14 @@ const LandingPage = (props) => {
                 component: <ComingSoon />,
               },
               {
-                label: "Closed",
-                key: 3,
-                component: <Closed />,
-              },
-              {
                 label: "Sold Out",
                 key: 4,
                 component: <SoldOut />,
+              },
+              {
+                label: "Closed",
+                key: 3,
+                component: <Closed />,
               },
             ]}
           />
@@ -480,27 +478,27 @@ const LandingPage = (props) => {
             <Feature>
               <img data-src={create} className="lazyload" alt="" />
               <p>
-                Create your Cofundie account and complete your profile using
-                valid email &amp; phone numbers
+               Create your Cofundie account and complete your profile using valid email, phone, and identification numbers
               </p>
             </Feature>
             <Feature>
               <img data-src={choose} className="lazyload" alt="" />
               <p>
-                Choose a property to Co-fund, you can get multiple slots in one
-                property as well as multiple properties
+                Choose a property to sponsor. You can get multiple slots in one property, as well as multiple properties.=
               </p>
             </Feature>
             <Feature>
               <img data-src={pay} className="lazyload" alt="" />
               <p>
                 Choose one of the payment methods &amp; complete payment to
-                co-own the property(s)
+                sponsor a property, or multiple properties
               </p>
             </Feature>
             <Feature>
               <img data-src={earn} className="lazyload" alt="" />
-              <p>Start earning annually on the income from your property</p>
+              <p>
+                Start earning on the income generated from your property after the Hold Period
+              </p>
             </Feature>
           </FeatureGrid>
         </Section>
@@ -555,12 +553,10 @@ const LandingPage = (props) => {
         </Section> */}
         <Section py="10rem">
           <Container width="80%" color={COLORS.BLUE}>
-            <h2 style={{ marginBottom: "2.5rem" }}>Why invest with us?</h2>
+            <h2 style={{ marginBottom: "2.5rem" }}>Why Choose Cofundie?</h2>
             <p>
-              Every single deal that makes it through to the platform has been
-              put through a rigorous due diligence process using the latest
-              cutting edge technology. All assets are also insured by our
-              reputable insurance partners
+              Every single deal that makes it through to the platform has been put through a rigorous due diligence process using the latest cutting edge technology.
+              We only partner with the best Property Developers.
             </p>
           </Container>
           <ReasonGrid mt="4rem">

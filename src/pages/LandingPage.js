@@ -30,7 +30,7 @@ import ap from "assets/images/partners/appolonia.png";
 import fl from "assets/images/partners/flutterwave.png";
 import mq from "assets/images/partners/meqasa.png";
 import ms from "assets/images/partners/mest.png";
-import st from "assets/images/partners/stanbic.png";
+// import st from "assets/images/partners/stanbic.png";
 import ze from "assets/images/partners/zenith.png";
 
 // import stanlib from "assets/images/stanlib-large.png";
@@ -80,11 +80,11 @@ const logos = [
 ];
 
 const partners = [
-  {
-    id: "st",
-    img: st,
-    link: "https://www.stanbicbank.com.gh/",
-  },
+  // {
+  //   id: "st",
+  //   img: st,
+  //   link: "https://www.stanbicbank.com.gh/",
+  // },
   {
     id: "ms",
     img: ms,
@@ -103,7 +103,7 @@ const partners = [
   {
     id: "ze",
     img: ze,
-    link: "https://www.zenithbank.com.gh",
+    link: "https://www.zenithbank.com",
   },
   {
     id: "ap",
@@ -113,7 +113,7 @@ const partners = [
 ];
 
 const NewsLogos = styled.div`
-  width: 80%;
+  width: 75%;
   margin: 2rem auto;
   display: flex;
   justify-content: space-between;
@@ -424,7 +424,12 @@ const LandingPage = (props) => {
           <NewsLogos>
             {logos &&
               logos.map((logo) => (
-                <NewsLogo key={logo.id} href={logo.link}>
+                <NewsLogo
+                  key={logo.id}
+                  href={logo.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={logo.img} alt="" />
                 </NewsLogo>
               ))}
@@ -607,7 +612,12 @@ const LandingPage = (props) => {
           <NewsLogos>
             {partners &&
               partners.map((logo) => (
-                <PartnerLogo key={logo.id} href={logo.link}>
+                <PartnerLogo
+                  key={logo.id}
+                  href={logo.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={logo.img} alt="" />
                 </PartnerLogo>
               ))}

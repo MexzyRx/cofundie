@@ -103,7 +103,7 @@ const partners = [
   {
     id: "ze",
     img: ze,
-    link: "https://www.zenithbank.com",
+    // link: "https://www.zenithbank.com",
   },
   {
     id: "ap",

@@ -493,7 +493,7 @@ const LandingPage = (props) => {
               <img data-src={choose} className="lazyload" alt="" />
               <p>
                 Choose a property to sponsor. You can get multiple slots in one
-                property, as well as multiple properties.=
+                property, as well as multiple properties.
               </p>
             </Feature>
             <Feature>

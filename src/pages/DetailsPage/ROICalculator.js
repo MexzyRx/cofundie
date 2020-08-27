@@ -116,7 +116,7 @@ const ROICalculator = ({ data }) => {
       <ROIInner>
         <div className="roi__row">
           <div className="roi__label">
-            <label htmlFor="">Number of shares</label>
+            <label htmlFor="">Number of Slots</label>
             <Input
               onChange={(e) => setQuantity(e.target.value)}
               min="0"
@@ -145,10 +145,18 @@ const ROICalculator = ({ data }) => {
         </div>
         <div className="roi__row">
           <label className="roi__label" htmlFor="">
-            Total Return (USD)
+            Projected Return (USD)
           </label>
           <Value className="roi__values">
-            {quantity * price * 0.15 + quantity * price}
+            {(quantity * price) * 0.15}
+          </Value>
+        </div>
+        <div className="roi__row">
+          <label className="roi__label" htmlFor="">
+            Total Projected Returns (USD)
+          </label>
+          <Value className="roi__values">
+            {((quantity * price) * 0.15) + (quantity * price)}
           </Value>
         </div>
       </ROIInner>

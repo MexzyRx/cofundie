@@ -109,7 +109,10 @@ const Value = styled.span`
 
 const ROICalculator = ({ data }) => {
   const [quantity, setQuantity] = React.useState(0);
-  const [price] = React.useState(250);
+  const [price] = React.useState(data.details.price);
+  const [currency] = React.useState(data.details.currency);
+
+  console.log("DATA -> " + JSON.stringify(data));
 
   return (
     <ROIContainer>
@@ -124,7 +127,7 @@ const ROICalculator = ({ data }) => {
             />
           </div>
           <div className="roi__values">
-            <label htmlFor="">Price (USD)</label>
+            <label htmlFor="">Price ({currency})</label>
             <Value
             // autoFocus
             // value={price}
@@ -148,7 +151,7 @@ const ROICalculator = ({ data }) => {
             Projected Return (USD)
           </label>
           <Value className="roi__values">
-            {(quantity * price) * 0.15}
+            {(quantity * price) * data.details.roi}
           </Value>
         </div>
         <div className="roi__row">
@@ -156,7 +159,7 @@ const ROICalculator = ({ data }) => {
             Total Projected Returns (USD)
           </label>
           <Value className="roi__values">
-            {((quantity * price) * 0.15) + (quantity * price)}
+            {((quantity * price) * data.details.roi) + (quantity * price)}
           </Value>
         </div>
       </ROIInner>

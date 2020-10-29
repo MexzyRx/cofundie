@@ -222,7 +222,7 @@ const DetailsPage = ({ listings, match }) => {
             <DetailsContainer width={{ sm: "85vw", lg: "60vw" }}>
               <DetailsSection my="5rem">
                 <h3 style={{ marginBottom: "2rem" }}>ROI Calculator</h3>
-                <ROICalculator />
+                <ROICalculator data={data} />
               </DetailsSection>
             </DetailsContainer>
 

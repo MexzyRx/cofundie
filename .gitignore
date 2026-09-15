@@ -1,4 +1,5 @@
 cofundie-master
 cofundie-frontend
 node_modules
+dist
 .env
